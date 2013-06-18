@@ -1,0 +1,30 @@
+The Diffie-Hellman cryptographic key exchange method implemented in Python for a work experience project. Written by Jack Renshaw, this implementation is open source and can be used by anyone for any purpose.
+
+https://en.wikipedia.org/wiki/Diffie-Hellman_key_exchange
+
+My Diffie-Hellman key exchange in python is the implementation of the well know "Diffie-Hellman" method of exchanging keys between two anonymous parties over an insecure connectoin. This method of key exchange implements the mathematical properties of prime numbers and mathematical functions such as modulus, and index muliplication to generate a shared secret from secret integers. The parties agree to use a prime number and a certain base, then share the results of the operation (SHARED base to the power of their individual secret number modulo by the shared modulus.). The operation is unreversable, so neither parties know the individual secret number the other used.
+
+Mathematically, the exchange can be described as the following.
+
+Person One (Po) and Person Two (Pt) agree on a certain base (x) and a certain prime number for the modulus function (y):
+
+The results for Po and Pt's operation will be known as RPo and RPt respectively, and the individual secrets will be known as IPo and IPt respectively;
+
+The shared secret shall be known as Ss
+
+RPo = x ^ IPo Mod y
+PPt = x ^ IPt Mod y
+
+RPo is shared with Pt and RPt is shared with Po
+
+Po Calculates:
+
+Ss = Rpt ^ IPo Mod y
+
+Pt Calculates:
+
+Ss = Rpo ^ Ipt Mod y
+
+Ss returns an identical result for both parties, and now they can use the shared secret to securely communicate.
+
+Neither party knows the others individual secret, only the shared secret. For the communications to be intercepted, the eavesdropper would have to know both parties individual secerets
